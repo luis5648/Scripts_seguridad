@@ -1,6 +1,9 @@
 
 # coding: utf-8
 
+import os
+
+
 global a
 global b
 global c
@@ -40,11 +43,71 @@ def algoritmo1():
             f.append(0)
     return f
 
-#def algoritmo2():
-#    for i in range(8):
+def algoritmo2():
+    for i in range(8):
+        if a[i] and c[i]:
+            d.append(True)
+        else:
+            d.append(False)
+
+    for i in range(8):
+        if b[i] and (not c[i]):
+            e.append(True)
+        else:
+            e.append(False)
+    
+    for i in range(8):
+        if d[i] or e[i]:
+
+            f.append(1)
+
+        else:
+            f.append(0)
+            
+    return f
+
         
 
-print(algoritmo1())
+print("\t\tMenu principal\n")
+print("Elija el algoritmo a resolver: ")
+print("1.- Algoritmo 1\n2.- Algoritmo 2")
+opcion = int(input())
+
+if opcion == 1:
+    print("El resultado es: ")
+    print(algoritmo1())
+
+elif opcion == 2:
+    print("El resultado es: ")
+    print(algoritmo2())
+else:
+    print("Opción no válida.\n\n")
+
+print("Continuar? S/N")
+cnt = input()
+
+while cnt.upper() != 'N':
+    os.system("clear")
+    d.clear()
+    e.clear()
+    f.clear()
+    print("\t\tMenu principal\n")
+    print("Elija el algoritmo a resolver: ")
+    print("1.- Algoritmo 1\n2.- Algoritmo 2")
+    opcion = int(input())
+
+    if opcion == 1:
+        print("El resultado es: ")
+        print(algoritmo1())
+
+    elif opcion == 2:
+        print("El resultado es: ")
+        print(algoritmo2())
+    else:
+        print("Opción no válida.\n\n")
+
+    print("Continuar? S/N")
+    cnt = input()
 
 
 
