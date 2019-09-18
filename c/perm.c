@@ -2,83 +2,69 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-    bool a_array[]= {true,true,true,true,false,false,false,false};
-    bool b_array[]= {true,true,false,false,true,true,false,false};
-    bool c_array[]= {true,false,true,false,true,false,true,false};
-    bool d_array[] ;
-    bool e_array[] ;
-    bool f_array[] ;
+#define TAMANIO_ARRAY 7
+
+bool a_array[] = {true, true, true, true, false, false, false, false};
+bool b_array[] = {true, true, false, false, true, true, false, false};
+bool c_array[] = {true, false, true, false, true, false, true, false};
+bool d_array[TAMANIO_ARRAY];
+bool e_array[TAMANIO_ARRAY];
+bool f_array[TAMANIO_ARRAY];
+
+
 void AlgoritmA()
 {
-    int k,j,i;
+    int k, j, i;
     char option;
-    for(j=0; j<=7; j++)
+    for (j = 0; j <= TAMANIO_ARRAY; j++)
     {
-        printf("%i\n",a_array[j]);
+        printf("%i\n", d_array[j]);
     }
     getchar();
     printf("\nDesea continuar S/N?\n");
-    scanf("%c",&option);
+    scanf("%c", &option);
 
-
-    switch(option)
+    switch (option)
     {
     case 'S':
 
-        for(i=0; i<=7; i++)
+        for (i = 0; i <= TAMANIO_ARRAY; i++)
         {
-            if((a_array[i])&&(b_array[i]))
+            if ((a_array[i]) && (b_array[i]))
             {
-                f_array[i]=true;
+                d_array[i] = true;
             }
             else
             {
-                f_array[i]=false;
+                d_array[i] = false;
             }
         }
 
-        for(j=0; j<=7; j++)
+        for (j = 0; j <= TAMANIO_ARRAY; j++)
         {
-            if(!(a_array[j])&&(c_array[j]))
+            if (!(a_array[j]) && (c_array[j]))
             {
-                f_array[j]=true;
+                e_array[j] = true;
             }
             else
             {
-                f_array[j]=false;
+                e_array[j] = false;
             }
         }
 
-        for(k=0; k<=7; k++)
+        for (k = 0; k <= TAMANIO_ARRAY; k++)
         {
-            if((d_array[k])||(e_array[k]))
+            if ((d_array[k]) || (e_array[k]))
             {
-                f_array[k]=true;
+                f_array[k] = true;
             }
             else
             {
-                f_array[k]=false;
+                f_array[k] = false;
             }
         }
-        /* TODO CODE---------------------*/
-
-        for(j=0; j<=7; j++)
-    {
-        printf("Array d = %i\n",d_array[j]);
-    }
-    printf("-------------------------\n");
-
-        for(j=0; j<=7; j++)
-    {
-        printf("Array e = %i\n",e_array[j]);
-    }
-    printf("-------------------------\n");
-
-        for(j=0; j<=7; j++)
-    {
-        printf("Array f = %i\n",f_array[j]);
-    }
-    printf("-------------------------\n");
+     
+        printf("-------------------------\n");
         break;
     case 'N':
         getchar();
@@ -92,19 +78,11 @@ void AlgoritmA()
         printf("Error an ocurred, try again...\n");
         system("cls");
     }
-
 }
-
-
-
-
-
-
 
 void mainMenu()
 {
-
-    int opc=0;
+    int opc = 0;
 
     do
     {
@@ -112,9 +90,9 @@ void mainMenu()
         printf("1.- Algoritmo 1\n");
         printf("2.-Algoritmo 2\n");
         printf("3.- Salir\n");
-        scanf("%d",&opc);
+        scanf("%d", &opc);
         system("cls");
-        switch(opc)
+        switch (opc)
         {
         case 1:
             AlgoritmA();
@@ -131,16 +109,11 @@ void mainMenu()
             system("cls");
         }
 
-    }
-    while(opc=3);
-
-
+    } while (opc = 3);
 }
-
 
 int main()
 {
-
 
     mainMenu();
     return 0;
